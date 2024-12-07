@@ -1,0 +1,1077 @@
+/* ============================ */
+/*          BASE STYLES         */
+/* ============================ */
+
+/* General styles for the body element */
+body {
+    font-family: 'Arial', sans-serif; /* Set the font to Arial, with sans-serif as a fallback */
+    line-height: 1.6; /* Set the line height to 1.6 for better readability */
+    color: #333; /* Dark gray color for text to provide good contrast against light backgrounds */
+    
+    /* Background image settings */
+    background: url('../images/bced.jpg') no-repeat center center; /* Set the background image, centered, and without repeating */
+    background-size: cover; /* Make the background image cover the entire screen */
+    background-attachment: fixed; /* Keep the background fixed while scrolling */
+    
+    margin: 0; /* Remove any default margin applied by the browser */
+    padding: 0; /* Remove any default padding applied by the browser */
+    
+    font-size: 16px; /* Set the base font size to 16px for consistent text sizing */
+    min-height: 100vh; /* Ensure the body takes up at least the full height of the viewport */
+    
+    /* Flexbox settings for layout */
+    display: flex; /* Use flexbox layout for child elements */
+    flex-direction: column; /* Stack the child elements vertically */
+}
+
+/* ============================ */
+/*       HEADER AND NAVBAR       */
+/* ============================ */
+
+/* Header styling */
+header {
+    background: linear-gradient(to right, #ffffff, #C8102E); /* Apply a gradient from white to a light red (#C8102E) */
+    color: #008000; /* Dark green text color */
+    padding: 15px 30px; /* Add 15px top and bottom padding, 30px left and right padding */
+    position: fixed; /* Fix the header to the top of the screen */
+    width: 100%; /* Make the header span the full width of the screen */
+    top: 0; /* Align the header to the top of the page */
+    z-index: 1000; /* Ensure the header stays on top of other elements (with a high z-index) */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Add a shadow below the header for depth */
+    height: 30px; /* Set the height of the header */
+}
+
+/* Navbar styling */
+nav ul {
+    display: flex; /* Use flexbox for horizontal layout of navigation items */
+    align-items: center; /* Vertically center the items in the navbar */
+    padding: 0; /* Remove default padding */
+    list-style-type: none; /* Remove list-style (bullets) */
+    margin: 0; /* Remove default margin */
+}
+
+/* List item styling within navbar */
+nav ul li {
+    position: relative; /* Allow positioning of sub-menus relative to this item */
+}
+
+/* Link styling within navbar */
+nav a {
+    color: #008000; /* Dark green text for links */
+    text-decoration: none; /* Remove underline from links */
+    padding: 12px 20px; /* Add padding around the links */
+    transition: background 0.3s, transform 0.3s, border-bottom 0.3s; /* Smooth transition for background color, transformation, and bottom border */
+    position: relative; /* Set relative position for better control over any child elements (like sub-menus) */
+}
+
+/* Active link styles */
+nav a.active {
+    color: #008000; /* Green color for active link text */
+    background-color: rgba(255, 255, 255, 0.4); /* Light background on active links */
+    border-bottom: 2px solid #008000; /* Add a green underline to indicate active link */
+    font-weight: bold; /* Make the active link bold */
+}
+
+/* Hover effect for navbar links */
+nav a:hover {
+    background: rgba(255, 255, 255, 0.2); /* Light background effect on hover */
+}
+
+/* ============================ */
+/*        SUB-MENU STYLING       */
+/* ============================ */
+
+/* Styling for sub-menu */
+.sub-menu {
+    display: none; /* Hide the sub-menu by default */
+    position: absolute; /* Position the sub-menu absolutely within the parent */
+    top: 100%; /* Position the sub-menu directly below the parent link */
+    left: 0; /* Align with the left edge of the parent */
+    background-color: #fff8e1; /* Soft yellow background to evoke warmth and cultural heritage */
+    color: #3c3c3c; /* Deep gray color for text to ensure good readability */
+    padding: 12px 0; /* Padding for vertical spacing inside the sub-menu */
+    list-style: none; /* Remove the default list style (bullets) */
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.15); /* Add subtle shadow for depth */
+    border-radius: 8px; /* Rounded corners for a softer look */
+    transition: opacity 0.3s ease, transform 0.3s ease; /* Smooth transitions for fade-in and slide-in effects */
+    transform: translateY(20px); /* Start the sub-menu slightly below and with a vertical transition */
+    opacity: 0; /* Start hidden (invisible) */
+    z-index: 10; /* Ensure the sub-menu appears above other elements */
+    font-family: 'Georgia', serif; /* Elegant serif font to match cultural feel */
+}
+
+/* Show sub-menu on hover */
+nav ul li:hover .sub-menu {
+    display: block; /* Show the sub-menu when hovering over the parent list item */
+    opacity: 1; /* Make the sub-menu fully visible */
+    transform: translateY(0); /* Reset the vertical position for a smooth upward transition */
+}
+
+/* Sub-menu list item width */
+.sub-menu li {
+    width: 350px; /* Set a fixed width for sub-menu items for better readability */
+    padding: 0; /* Remove padding */
+    height: 35px; /* Fixed height for uniformity */
+}
+
+/* Styling for sub-menu links */
+.sub-menu li a {
+    padding: 14px 30px; /* Add padding for space around the text */
+    color: #3c3c3c; /* Dark gray text for readability */
+    background-color: transparent; /* Transparent background */
+    text-decoration: underline; /* Underline the text */
+    font-weight: 500; /* Medium weight for better readability */
+    font-size: 14px; /* Adjust font size for readability */
+    letter-spacing: 0.5px; /* Slightly increase letter spacing for better clarity */
+    text-transform: capitalize; /* Capitalize the first letter of each word */
+    border-bottom: 2px solid transparent; /* Transparent border by default */
+    transition: background 0.3s, transform 0.2s, color 0.3s, border-color 0.3s; /* Smooth transitions for hover effects */
+    position: relative; /* Allow positioning of pseudo-elements or other relative components */
+}
+
+/* Hover effect for sub-menu links */
+.sub-menu li a:hover {
+    background-color: #FFCCCB; /* Light pink background on hover to evoke warmth */
+    color: #2e7d32; /* Dark green text for cultural relevance */
+    border-bottom: 2px solid #2e7d32; /* Dark green underline on hover */
+    transform: translateX(8px); /* Subtle horizontal movement for dynamic feel */
+}
+
+/* Active link styles for sub-menu */
+.sub-menu li a.active {
+    background-color: #c8e6c9; /* Light green background for active links */
+    color: #2e7d32; /* Dark green text for active links */
+    font-weight: bold; /* Make the active link bold */
+    border-bottom: 2px solid #2e7d32; /* Green underline for active state */
+    transform: translateX(8px); /* Slight shift for emphasis */
+}
+
+/* Sub-menu fade-in animation */
+.sub-menu {
+    animation: fadeIn 0.4s ease-out forwards; /* Apply fade-in animation */
+}
+
+/* Keyframe for fade-in effect */
+@keyframes fadeIn {
+    from {
+        opacity: 0; /* Start with the sub-menu hidden */
+        transform: translateY(20px); /* Start from below the parent */
+    }
+    to {
+        opacity: 1; /* Fade to visible */
+        transform: translateY(0); /* Slide to its final position */
+    }
+}
+
+/* ============================ */
+/*       RESPONSIVE DESIGN       */
+/* ============================ */
+
+/* Adjustments for smaller screens (e.g., mobile devices) */
+@media (max-width: 768px) {
+    .sub-menu {
+        width: 100%; /* Make the sub-menu full-width on mobile for better touch interaction */
+        left: 0; /* Align it with the left edge */
+        border-radius: 0; /* Remove rounded corners for mobile */
+        box-shadow: none; /* Remove the shadow for mobile */
+    }
+
+    .sub-menu li a {
+        font-size: 14px; /* Slightly smaller font for better readability on mobile */
+        padding: 12px 20px; /* Adjust padding for mobile */
+    }
+}
+
+
+
+/* Main Content */
+main {
+    padding: calc(100px + 20px) 20px; /* Space below navbar */
+    max-width: 1200px;
+    margin: auto;
+    background: rgba(255, 255, 255, 0.85);
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Headings */
+h1, h2, h3 {
+    color: #008000;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* Footer */
+footer {
+    background: #C8102E;
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+}
+
+/* Image Styles */
+.image-container {
+    margin: 20px 0;
+    text-align: center;
+}
+
+.image-container img {
+    transition: transform 0.3s ease; /* Smooth transition for zoom effect */
+    cursor: pointer; /* Change cursor to pointer on hover */
+}
+
+.image-container img:hover {
+    transform: scale(1.05); /* Slight zoom effect on hover */
+}
+
+.styled-image {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border: 5px solid #008000;
+}
+
+/* Card Styles */
+.card {
+    background: white;
+    border: 2px solid #008000;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Food and Drinks Styles */
+.food-slider .styled-image,
+.drinks-slider .styled-image {
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+    border: 5px solid #008000;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.food-slider .styled-image:hover,
+.drinks-slider .styled-image:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+}
+
+.food-slider .styled-image:active,
+.drinks-slider .styled-image:active {
+    transform: scale(1.02);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+}
+
+
+.food-slider, .drinks-slider {
+    background: rgba(255, 255, 255, 0.85);
+    padding: 20px;
+    border-radius: 8px;
+}
+
+/* Swiper Container */
+.swiper-container {
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+    position: relative;
+}
+
+.swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    color: #333;
+    position: relative;
+    transition: transform 0.5s ease;
+}
+
+/* Button styles */
+.swiper-button-next,
+.swiper-button-prev {
+    color: #000;
+    background-color: transparent;
+    border-radius: 5px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.2s;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+}
+
+.swiper-button-next { right: 10px; }
+.swiper-button-prev { left: 10px; }
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+    transform: scale(1.1);
+}
+
+/* Pagination bullets */
+.swiper-pagination {
+    position: absolute;
+    bottom: 15px;
+    text-align: center;
+    width: 100%;
+}
+
+.swiper-pagination-bullet {
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 50%;
+    width: 12px;
+    height: 12px;
+    margin: 0 5px;
+    transition: background 0.3s;
+}
+
+.swiper-pagination-bullet-active {
+    background: #007bff;
+}
+
+.swiper-pagination-bullet:hover {
+    background: #0056b3;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column; /* Stack links on smaller screens */
+        gap: 10px; /* Space between links */
+    }
+
+    h1, h2, h3 {
+        font-size: 1.5rem; /* Adjust heading sizes on smaller screens */
+    }
+}
+.team-images {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.team-images .image-container {
+  text-align: center; /* Center the content */
+  max-width: 200px; /* Restrict width for a compact look */
+  margin: 10px;
+  padding: 15px;
+  border-radius: 10px;
+  background: transparent; /* No background */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.team-images .image-container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.team-images .styled-image {
+  width: 100%; /* Responsive image size */
+  height: auto;
+  border-radius: 10px; /* Rounded corners for the image */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  margin-bottom: 10px; /* Space between image and text */
+  transition: transform 0.3s ease;
+}
+
+.team-images .image-container:hover .styled-image {
+  transform: scale(1.05); /* Slight zoom effect on hover */
+}
+
+.team-images .image-container p {
+  font-family: 'Arial', sans-serif;
+  font-size: 14px;
+  color: #333; /* Dark text for readability */
+  line-height: 1.4;
+  margin: 0;
+}
+
+/* Video Section Styling */
+.video-container {
+    max-width: 600px;
+    margin: 20px auto;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.styled-video {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 1s ease-out forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Smooth Scroll */
+html {
+    scroll-behavior: smooth;
+}
+.footer-content {
+    display: flex;
+    justify-content: space-between; /* Space out overview, contact, and address sections */
+    padding: 20px 0;
+}
+
+.footer-overview,
+.footer-contact,
+.footer-address {
+    flex: 1; /* Allow sections to share space */
+    margin: 0 10px; /* Add some spacing between sections */
+}
+
+.footer-overview h3,
+.footer-contact h3,
+.footer-address h3 {
+    color: white; /* Use white for headings */
+}
+
+.footer-address {
+    color: white; /* Ensure address text is white */
+}
+
+.footer-overview ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.footer-overview a,
+.footer-contact a {
+    color: white;
+    text-decoration: none;
+}
+
+.footer-overview a:hover,
+.footer-contact a:hover {
+    text-decoration: underline; /* Add hover effect for links */
+}
+
+.footer-form input,
+.footer-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: none;
+    border-radius: 5px;
+}
+
+.footer-form button {
+    padding: 10px 20px;
+    background-color: #008000; /* Or any other color you prefer */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.footer-form button:hover {
+    background-color: #005700; /* Darker shade on hover */
+}
+/* Container for each image with overlay button */
+.image-link-container {
+    position: relative;
+    width: 100%;
+    max-width: 300px; /* Adjust as needed */
+    margin: 20px auto; /* Center alignment and spacing */
+}
+
+.link-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px; /* Optional rounded corners */
+}
+
+/* Style for overlay button on the image */
+.image-button {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 16px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+/* Hover effect on the button */
+.image-link:hover .image-button {
+    background-color: rgba(255, 0, 0, 0.8); /* Change to a vibrant color on hover */
+}
+.timeline {
+    margin: 20px 0;
+    padding: 0;
+    list-style: none;
+}
+
+.timeline-item {
+    margin: 15px 0;
+    padding: 10px;
+    border-left: 2px solid #008000; /* Change to your preferred color */
+    position: relative;
+}
+
+.timeline-item h3 {
+    margin: 0;
+    color: white; /* Title color */
+}
+
+.timeline-item p {
+    color: white; /* Description color */
+}
+
+.timeline-item img {
+    width: 100%; /* Responsive image */
+    height: auto;
+    margin-top: 10px;
+}
+
+.video-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.video-gallery video {
+    width: calc(33.33% - 10px); /* 3 videos per row with spacing */
+    height: auto;
+}
+
+.gallery-title {
+    color: white; /* Title color */
+    text-align: center;
+    margin: 20px 0;
+}
+
+.video-title {
+    color: white; /* Title color */
+    text-align: center;
+}
+
+/* General Styles for Images and Videos in the Aftermath Section */
+.image-link-container {
+    position: relative; /* Allow positioning for button overlay */
+    margin: 20px; /* Space around each image/video */
+    overflow: hidden; /* Prevent overflow */
+}
+
+.link-image {
+    width: 100%; /* Make image fill the container */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 8px; /* Optional: Rounded corners for a softer look */
+    transition: transform 0.3s; /* Smooth scaling on hover */
+}
+
+.link-image:hover {
+    transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+.video-container {
+    position: relative; /* Allow positioning for button overlay */
+    margin: 20px; /* Space around each video */
+    overflow: hidden; /* Prevent overflow */
+    border-radius: 8px; /* Optional: Rounded corners for a softer look */
+}
+
+.video-container video {
+    width: 100%; /* Make video fill the container */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 8px; /* Optional: Rounded corners for a softer look */
+}
+
+/* Optional: Button styles for overlay */
+.image-button {
+    position: absolute; /* Position over the image */
+    bottom: 10px; /* Position from the bottom */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Center adjustment */
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
+    color: #333; /* Text color */
+    padding: 10px 15px; /* Padding for the button */
+    border-radius: 5px; /* Rounded corners */
+    text-align: center; /* Center text */
+    font-weight: bold; /* Bold text */
+    transition: background-color 0.3s; /* Smooth background color change */
+}
+
+.image-button:hover {
+    background-color: rgba(255, 255, 255, 1); /* Solid background on hover */
+}
+/* Gallery and Video Section Styles */
+.gallery-section, .video-section {
+    max-width: 1200px;
+    margin: 40px auto;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.85);
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.gallery-grid, .video-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+/* Styles applied only to images in the gallery grid */
+.gallery-grid img {
+    width: 300px;  /* Consistent width */
+    height: 200px; /* Consistent height */
+    object-fit: cover; /* Ensures the image fills the box without distortion */
+	border:5px solid #008000;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease; /* Smooth transition for zoom effect */
+}
+
+/* Zoom effect on hover for gallery images only */
+.gallery-grid img:hover {
+    transform: scale(1.05); /* Slight zoom effect on hover */
+}
+
+/* Timeline Section Styling */
+.timeline {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.timeline-event {
+    max-width: 600px;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+}
+
+/* Style for images and videos inside timeline-event */
+.timeline-event img, .timeline-event video {
+    margin-top: 15px;
+    transition: transform 0.3s ease; /* Smooth transition for zoom effect */
+	border:5px solid #008000;
+    border-radius: 8px; /* Optional: Add rounded corners to images/videos */
+}
+
+/* Hover effect for zoom */
+.timeline-event img:hover, .timeline-event video:hover {
+    transform: scale(1.05); /* Slight zoom on hover */
+}
+
+/* Pager video specific style */
+.timeline-event .pager-video {
+    width: 200px;  /* Adjusted width for reel size */
+    height: 350px; /* Adjusted height for portrait orientation */
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 15px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .gallery-grid img, .video-grid video, .timeline .timeline-event img, .timeline .timeline-event video {
+        width: 100%;  /* Full-width on smaller screens */
+        height: auto; /* Maintain aspect ratio */
+    }
+
+    .timeline-event {
+        width: 100%;
+    }
+}
+/* Common size for images and videos in gallery and video sections */
+.gallery-grid img, .video-grid video, .timeline .timeline-event img, .timeline .timeline-event video {
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Pager video specific style */
+.timeline-event .pager-video {
+    width: 200px;  /* Adjusted width for reel size */
+    height: 350px; /* Adjusted height for portrait orientation */
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 15px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .gallery-grid img, .video-grid video, .timeline .timeline-event img, .timeline .timeline-event video {
+        width: 100%;
+        height: auto;
+    }
+
+    .timeline-event .pager-video {
+        width: 100%;
+        height: auto;
+    }
+}
+/* Common size for images and videos in gallery and video sections */
+.gallery-grid img, .video-grid video, .timeline .timeline-event img, .timeline .timeline-event video {
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Pager image specific style for portrait orientation */
+.timeline-event .pager-image {
+    width: 200px;  /* Adjusted width for reel-like appearance */
+    height: 350px; /* Adjusted height for portrait orientation */
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 15px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .gallery-grid img, .video-grid video, .timeline .timeline-event img, .timeline .timeline-event video {
+        width: 100%;
+        height: auto;
+    }
+
+    .timeline-event .pager-image {
+        width: 100%;
+        height: auto;
+    }
+} 
+
+.video-flex-container {
+    display: flex;
+    gap: 20px; /* Space between videos */
+    justify-content: center; /* Center videos within the section */
+
+}
+
+.video-container {
+    flex: 1 1 45%; /* Make each video container take 45% of the available width */
+}
+.sliding-sections {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 items per row */
+    gap: 20px; /* Space between items */
+    justify-items: center; /* Center items horizontally */
+}
+
+.image-link-container {
+    width: 100%; /* Allow containers to span full width within their grid column */
+}
+
+@media (max-width: 768px) {
+    .sliding-sections {
+        grid-template-columns: 1fr; /* Stack items in a single column on smaller screens */
+    }
+}
+/
+/* Form Styles for Donation, Login, and Signup */
+.form-container {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-container label {
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #008000;
+}
+
+.form-container input[type="text"],
+.form-container input[type="email"],
+.form-container input[type="number"],
+.form-container input[type="password"] {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    width: 100%;
+}
+
+.form-container input[type="submit"],
+.form-container button {
+    padding: 12px;
+    background-color: #C8102E;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.form-container input[type="submit"]:hover,
+.form-container button:hover {
+    background-color: #a40e28;
+}
+.contact-form textarea {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    width: 100%;
+    height: 120px; /* Makes the message box taller */
+    resize: vertical; /* Allows vertical resizing if needed */
+}
+
+/* Container Style */
+/* Container Style */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Event Card Style */
+.event {
+    background-color: #ffffff;
+    width: 100%;
+    margin: 20px 0;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Event Heading Style */
+.event h2 {
+    font-size: 1.5em;
+    color: green;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+/* Event Image Style */
+.event img {
+    width: 100%;
+    height: auto;
+    border:5px solid #008000;/* Green border around the image */
+    border-radius: 8px;
+    margin: 10px 0;
+    transition: transform 0.3s ease;
+}
+
+/* Hover Effect on Image Only */
+.event img:hover {
+    transform: scale(1.02);
+}
+
+/* Event Paragraph Style */
+.event p {
+    font-size: 1.2em;
+    line-height: 1.6;
+    color: black;
+    text-align: justify;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .container {
+        padding: 10px;
+    }
+
+    .event {
+        padding: 15px;
+    }
+
+    .event h2 {
+        font-size: 1.3em;
+    }
+
+    .event p {
+        font-size: 0.9em;
+    }
+}
+/* Thank you page*/
+ {
+            font-family: Arial, sans-serif;
+            background-color: #f8f8f8;
+            color: #333;
+            text-align: center;
+            padding: 50px;
+        }
+        .thank-you-box {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            padding: 50px;
+            display: inline-block;
+        }
+        h1 {
+            color: #4CAF50;
+        }
+        p {
+            font-size: 1.2em;
+        }
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            margin-top: 20px;
+            background-color: #4CAF50;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .button:hover {
+            background-color: red;
+			
+        }
+		 .thank-you-image {
+    margin-top: 10px;
+    width: 60%; /* Set a percentage width */
+    height: auto; /* Maintain aspect ratio */
+    max-height: 350px; /* Set a maximum height to control dimensions */
+    border: 5px solid #008000; /* Green border */
+    border-radius: 8px; /* Match the box style */
+    object-fit: fill; /* Ensures the image fills the container while preserving aspect ratio */
+}
+/* subnavigation header style*/
+.photo-gallery .masonry-gallery {
+    column-count: 4;
+    column-gap: 1rem;
+}
+
+.photo-gallery .masonry-item {
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+.photo-gallery .masonry-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.photo-gallery .masonry-item img:hover {
+    transform: scale(1.05);
+}
+.video-container {
+  width: 100px; /* Smaller size to match navigation items */
+  height: auto;
+  overflow: hidden;
+  text-align: center;
+}
+
+
+/* Add this to your CSS file */
+:target {
+  scroll-margin-top: 100px; /* Adjust based on the height of your fixed header */
+}
+
+/* Optional: Ensure smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+textarea {
+  display: block; /* Forces the textarea to a new line */
+  width: 100%; /* Full width */
+  max-width: 900px; /* Set a max width */
+  height: 100px; /* Adjust height */
+  padding: 10px;
+  font-size: 16px;
+  font-family: 'Arial', sans-serif;
+  color: #333;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  transition: border-color 0.3s ease;
+}
+ 
+textarea:focus {
+  border-color: #007BFF;
+  outline: none;
+}
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #ecf0f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #1abc9c;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #16a085;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in {
+    animation: fadeIn 1s ease-in-out;
+}
+
